@@ -1,0 +1,7 @@
+{
+  "name": "map-better",
+  "version": "0.0.0",
+  "description": "Map with better functions",
+  "main": "index.js",
+  "repository": "laggingreflex/map-better"
+}
