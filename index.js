@@ -1,5 +1,15 @@
 class MapBetter extends Map {
   constructor(...args) { super(...args) }
+
+  getKey(value) {
+    const found = this.entriesArray().find(([k, v]) => v === value);
+    if (!found) return;
+    else return found[0];
+  }
+  hasValue(value) {
+    return -1 < this.valuesArray().indexOf(value);
+  }
+
   map(callback, thisArg) {
     return new MapBetter(this.entriesArray().map(([key, value]) => {
       const newValue = callback.call(thisArg || this, value, key, this);
@@ -21,6 +31,9 @@ class MapBetter extends Map {
   filter(callback, thisArg) {
     return new MapBetter(this.entriesArray().filter(([key, value]) => callback.call(thisArg || this, value, key, this)));
   }
+  find(callback, thisArg) {
+    return this.valuesArray().find((value) => callback.call(thisArg || this, value));
+  }
   reverse(inPlace) {
     if (inPlace) {
       const entries = this.entriesArray().reverse();
@@ -30,16 +43,21 @@ class MapBetter extends Map {
       for (const [key, value] of entries) {
         this.set(key, value);
       }
+      return this;
     } else {
       return new MapBetter(this.entriesArray().reverse());
     }
   }
   invert(inPlace) {
     if (inPlace) {
-      for (const [key, value] of this) {
-        this.delete(key);
+      const entries = Array.from(this.entries());
+      for (const [key] of this) {
+        this.delete(key)
+      }
+      for (const [key, value] of entries) {
         this.set(value, key);
       }
+      return this;
     } else {
       return new MapBetter(this.entriesArray().map(_ => _.reverse()));
     }

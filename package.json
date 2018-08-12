@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "description": "Map with better functions",
   "main": "index.js",
-  "repository": "laggingreflex/map-better"
+  "repository": "laggingreflex/map-better",
+  "scripts": {
+    "test": "node test"
+  }
 }

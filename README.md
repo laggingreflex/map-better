@@ -19,10 +19,14 @@ const Map = require('map-better')
 ### API
 
 
+* **`.getKey(value)`** Returns the key of the specified element
+* **`.hasValue(value)`** Returns a boolean indicating whether the element (at any key) exists or not
+* **`.setKey(value, key)`** Updates the key of the specified element (or throws an error if element doesn't exist)
 * **`.map((value, key) => newValue)`** Creates a new Map with same keys but with values from the result of the callback
-* **`.mapKeys((key, value) => newValue)`**  〃  a new Map with same *values* but with *keys* from the result of the callback
+* **`.mapKeys((key, value) => newKey)`**    〃   a new Map with same *values* but with *keys* from the result of the callback
 * **`.mapArray((value, key) => newValue)`** Creates a new array with the results of the callback
-* **`.filter((value, key) => true || false)`** Creates a (new) [filtered] Map (with the same keys)
+* **`.filter((value, key) => true|false)`** Creates a (new) [filtered] Map (with the same keys)
+* **`.find((value) => true|false)`** Returns first element (**value**) that satisfies the testing function
 * **`.reverse(inPlace = false)`** Reverses the (iterator of the) Map
 * **`.invert(inPlace = false)`** Inverts `keys` `<==>` `values` of the Map
 * **`.entriesArray()`** Returns <code>[Array.from]\(this[.entries()])</code>
