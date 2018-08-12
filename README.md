@@ -19,9 +19,9 @@ const Map = require('map-better')
 ### API
 
 
-* **`.getKey(value)`** Returns the key of the specified element
-* **`.hasValue(value)`** Returns a boolean indicating whether the element (at any key) exists or not
-* **`.setKey(value, key)`** Updates the key of the specified element (or throws an error if element doesn't exist)
+* **`.getKey(value)`** Like <code>[.get()]</code> but returns the *key* of the specified element
+* **`.hasValue(value)`** Like <code>[.has()]</code> but checks whether the *element* (at any key) exists or not
+* **`.setKey(value, key)`** Like <code>[.set()]</code> but updates the *key* of the specified element (throws if element doesn't exist)
 * **`.map((value, key) => newValue)`** Creates a new Map with same keys but with values from the result of the callback
 * **`.mapKeys((key, value) => newKey)`**    〃   a new Map with same *values* but with *keys* from the result of the callback
 * **`.mapArray((value, key) => newValue)`** Creates a new array with the results of the callback
@@ -37,6 +37,9 @@ const Map = require('map-better')
 
 [filtered]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 [Array.from]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
+[.get()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/get
+[.has()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/has
+[.set()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/set
 [.values()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/values
 [.keys()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/keys
 [.entries()]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map/entries
